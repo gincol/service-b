@@ -1,0 +1,3 @@
+server:  servlet:    context-path: /service-blogging:  level:    root: INFOspring:  application:    name: '@project.artifactId@'    version: '@project.version@' management:  metrics:    tags:      application: '@project.artifactId@'          ---spring:  profiles: local  zipkin:    enabled: false  server:  port: 8080
+
+management:  endpoints:    web:      exposure:        include: 'health,prometheus'        exclude: env ---spring:  profiles: devserver:  port: 8080  management:  endpoints:    web:      exposure:        include: 'health,prometheus'        exclude: env        
